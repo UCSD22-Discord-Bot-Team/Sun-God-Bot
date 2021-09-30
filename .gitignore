@@ -1,3 +1,5 @@
 .env
 .gitignore
 botenv
+
+__pycache__/

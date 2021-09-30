@@ -1,17 +1,7 @@
-import json
-import os
-import sys
-
 import discord
 from discord.ext import commands
 from discord_slash import cog_ext, SlashContext
 from discord_slash.utils.manage_commands import create_option
-
-if not os.path.isfile("config.json"):
-    sys.exit("'config.json' not found! Please add it and try again.")
-else:
-    with open("config.json") as file:
-        config = json.load(file)
 
 class general(commands.Cog, name="general"):
     def __init__(self, bot):
@@ -20,6 +10,7 @@ class general(commands.Cog, name="general"):
     @cog_ext.cog_slash(
         name="ping",
         description="Check if the bot is alive.",
+        guild_ids=[592923725884686355],
     )
     async def ping(self, ctx: SlashContext):
         """
